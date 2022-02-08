@@ -11,12 +11,12 @@ export default function Loading() {
 
 const style = StyleSheet.create({
   wrapper: {
-    // flex: 1,
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lottie: {
-    width: 200
+    width: 120
   }
 });

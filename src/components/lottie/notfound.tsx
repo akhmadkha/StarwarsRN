@@ -4,7 +4,7 @@ import LottieView from 'lottie-react-native';
 export default function Notfound() {
   return (
     <View style={style.wrapper}>
-      <LottieView source={require('../../assets/lottie/notfound.json')} autoPlay loop />
+      <LottieView source={require('../../assets/lottie/notfound.json')} autoPlay loop style={style.lottie} />
     </View>
   );
 }
@@ -16,4 +16,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  lottie: {
+    width: 250
+  }
 });

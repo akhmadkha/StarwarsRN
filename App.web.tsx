@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {View} from 'react-native';
-import Home from './src/modules/home';
+import Home from './src/modules/film';
 
 // Initialize Apollo Client
 const client = new ApolloClient({

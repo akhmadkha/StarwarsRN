@@ -15,7 +15,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
-import Home from './src/modules/home';
+import Routes from './src/routes/routes';
 // Initialize Apollo Client
 const client = new ApolloClient({
   uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
@@ -48,7 +48,7 @@ const App = () => {
     <ApolloProvider client={client}>
       <View style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'light-content'} />
-        <Home/>
+        <Routes/>
       </View>
     </ApolloProvider>
   );
