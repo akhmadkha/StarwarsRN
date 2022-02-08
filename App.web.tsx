@@ -1,38 +1,35 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {View} from 'react-native';
+import Home from './src/modules/home';
 
-const App = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello from {'\n'}React Native Web!</Text>
-      <TouchableOpacity
-        onPress={() => setCount(count + 1)}
-        style={styles.button}>
-        <Text>Click me! gaes haha</Text>
-      </TouchableOpacity>
+// Initialize Apollo Client
+const client = new ApolloClient({
+  uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
 
-      <Text>You clicked {count} times!</Text>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#C3E8BD',
-    paddingTop: 40,
-    paddingHorizontal: 10,
+  cache: new InMemoryCache(),
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+    'Access-Control-Allow-Headers':
+      'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
   },
-  button: {
-    backgroundColor: '#ADBDFF',
-    padding: 5,
-    marginVertical: 20,
-    alignSelf: 'flex-start',
-  },
-  title: {
-    fontSize: 40,
+  credentials: 'omit',
+  defaultOptions: {
+    watchQuery: {
+      errorPolicy: 'all',
+    },
   },
 });
+
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
+      <View style={{flex: 1, backgroundColor: "#000"}}>
+        <Home/>
+      </View>
+    </ApolloProvider>
+  );
+};
 
 export default App;

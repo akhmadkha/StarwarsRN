@@ -9,7 +9,7 @@ const {presets} = require(`${appDirectory}/babel.config.js`);
 const compileNodeModules = [
   // Add every react-native package that needs compiling
   // 'react-native-gesture-handler',
-].map((moduleName) => path.resolve(appDirectory, `node_modules/${moduleName}`));
+].map(moduleName => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.js$|tsx?$/,
@@ -45,8 +45,16 @@ const imageLoaderConfiguration = {
     loader: 'url-loader',
     options: {
       name: '[name].[ext]',
+      esModule: false,
     },
   },
+
+  // test: /\.(png|jpe?g|gif)$/,
+  // options: {
+  //   name: '[name].[hash:8].[ext]',
+  //   scalings: {'@2x': 2, '@3x': 3},
+  // },
+  // loader: 'react-native-web-image-loader',
 };
 
 module.exports = {
