@@ -4,6 +4,8 @@ import Header from './components/header';
 import {useQuery, gql} from '@apollo/client';
 import theme from '../../styles/theme.style';
 import {Clock, User} from 'react-native-feather';
+import Loading from '../../components/lottie/loading';
+import Error from '../../components/lottie/error';
 
 export default function FilmDetail(props: any) {
   const {film_id} = props?.route?.params;
@@ -20,7 +22,24 @@ export default function FilmDetail(props: any) {
       }
     }
   `;
-  const {error, data} = useQuery(GET_FILM);
+  const {loading, error, data, refetch} = useQuery(GET_FILM);
+
+  if (loading) {
+    return (
+      <ScrollView>
+        <Header />
+        <Loading />
+      </ScrollView>
+    );
+  }
+  if (error) {
+    return (
+      <ScrollView>
+        <Header />
+        <Error refetch={() => refetch} />
+      </ScrollView>
+    );
+  }
   if (data) {
     const {episodeID, title, director, releaseDate, openingCrawl} = data.film;
     return (
@@ -29,28 +48,27 @@ export default function FilmDetail(props: any) {
         <View>
           <View style={style.top_title_wrapper}>
             <View style={style.top_title_box}>
-              <Clock width={14} stroke="orange"/>
+              <Clock width={14} stroke="orange" />
               <Text style={style.top_title_text}>{releaseDate}</Text>
             </View>
             <View style={style.top_title_box}>
-              <User width={14} stroke="orange"/>
+              <User width={14} stroke="orange" />
               <Text style={style.top_title_text}>{director}</Text>
             </View>
-            
           </View>
           <Text style={style.title}>{title}</Text>
           <View style={style.opening_wrapper}>
-            <Text style={style.opening}>
-              {`${openingCrawl}`}
-            </Text>
+            <Text style={style.opening}>{`${openingCrawl}`}</Text>
           </View>
         </View>
       </ScrollView>
     );
   }
+
   return (
     <ScrollView>
       <Header />
+      <Loading />
     </ScrollView>
   );
 }
@@ -62,8 +80,8 @@ const style = StyleSheet.create({
     marginBottom: 10,
   },
   top_title_box: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginHorizontal: 10,
   },
   top_title_text: {
@@ -76,7 +94,7 @@ const style = StyleSheet.create({
     fontSize: 30,
     color: theme.FONT_PRIMARY_COLOR,
     textAlign: 'center',
-    fontWeight: "900"
+    fontWeight: '900',
   },
   opening_wrapper: {
     paddingTop: 40,
@@ -86,6 +104,6 @@ const style = StyleSheet.create({
   opening: {
     color: theme.FONT_PRIMARY_COLOR,
     fontSize: theme.FONT_SIZE_LARGE,
-    textAlign: "center"
-  }
+    textAlign: 'center',
+  },
 });

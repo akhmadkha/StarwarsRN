@@ -1,9 +1,14 @@
 import React from 'react';
-import {ScrollView, Text, View, StyleSheet} from 'react-native';
+import {ScrollView, Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import CategoriesStore from '../../../stores/categories.store';
 import themeStyle from '../../../styles/theme.style';
+import {useNavigation} from '@react-navigation/native';
 
+// type navigationType = {
+
+// }
 export default function Categories() {
+  const navigation = useNavigation()
   return (
     <View style={style.wrapper}>
       <Text style={style.text_header}>Categories</Text>
@@ -15,10 +20,10 @@ export default function Categories() {
         style={style.horizontal_scroll}>
         {CategoriesStore.map((val, idx) => {
           return (
-            <View style={[style.card, val.id === 1 && style.card_active]} key={idx}>
+            <TouchableOpacity onPress={() => navigation.navigate(val.path as any)} style={[style.card, val.id === 1 && style.card_active]} key={idx}>
               <Text style={style.text_logo}>{val.logo}</Text>
               <Text style={style.text_primary_color}>{val.title}</Text>
-            </View>
+            </TouchableOpacity>
           );
         })}
       </ScrollView>
@@ -57,7 +62,7 @@ const style = StyleSheet.create({
     minWidth: 110,
     paddingVertical: 14,
     borderWidth: 1,
-    backgroundColor: '#292929',
+    backgroundColor: themeStyle.BG_SECONDARY_COLOR,
     borderRadius: 10,
     marginRight: 10,
   },

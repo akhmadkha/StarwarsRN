@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
-import BackButton from '../../../components/global/BackButton';
+import BackButton from '../../../components/global/back_button';
 import theme from '../../../styles/theme.style';
 
 const images: any = {

@@ -2,28 +2,34 @@ const categories = [
   {
     id: 1,
     title: "Films",
-    logo: "😍"
+    logo: "😍",
+    path: "Home"
   },
   {
     id: 2,
     title: "Character",
-    logo: "😎"
+    logo: "😎",
+    path: "Character"
   },
   {
     id: 3,
-    title: "Planets",
-    logo: "🪐"
-  },
-  {
-    id: 4,
     title: "Starships",
-    logo: "🔥"
+    logo: "🔥",
+    path: "Starships"
   },
-  {
-    id: 5,
-    title: "Vehicle",
-    logo: "🚗"
-  },
+  // {
+  //   id: 4,
+  //   title: "Planets",
+  //   logo: "🪐",
+  //   path: "Planets"
+  // },
+  
+  // {
+  //   id: 5,
+  //   title: "Vehicles",
+  //   logo: "🚗",
+  //   path: "Vehicles"
+  // },
 ]
 
 export default categories

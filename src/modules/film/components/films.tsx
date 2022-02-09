@@ -43,12 +43,7 @@ function Films() {
   };
   const {error, data, refetch} = useQuery(GET_FILM);
   if (error) {
-    return (
-      <TouchableOpacity style={style.button_reload} onPress={() => refetch}>
-        <Error />
-        <Text style={style.reload_text}>Click to reload</Text>
-      </TouchableOpacity>
-    );
+    return <Error refetch={() => refetch}/>;
   }
   if (data) {
     let {films} = data.allFilms;
@@ -92,7 +87,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 15,
     borderRadius: 10,
-    backgroundColor: '#292929',
+    backgroundColor: themeStyle.BG_SECONDARY_COLOR,
   },
   film_img: {
     width: 100,
@@ -104,7 +99,7 @@ const style = StyleSheet.create({
     overflow: 'hidden',
     borderRadius: 10,
     bottom: 15,
-    borderColor: '#292929',
+    borderColor: themeStyle.BG_SECONDARY_COLOR,
     borderWidth: 4,
   },
   desc_wrapper: {
@@ -137,14 +132,6 @@ const style = StyleSheet.create({
   film_director: {
     color: themeStyle.FONT_PRIMARY_COLOR,
     fontSize: themeStyle.FONT_SIZE_SMALL,
-  },
-  button_reload: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  reload_text: {
-    color: themeStyle.FONT_PRIMARY_COLOR,
   },
 });
 
