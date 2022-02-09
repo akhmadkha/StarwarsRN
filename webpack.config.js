@@ -18,6 +18,8 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, 'index.web.js'), // Entry to your application
     path.resolve(__dirname, 'App.web.tsx'), // Change this to your main App file
     path.resolve(__dirname, 'src'),
+    path.resolve(__dirname, 'node_modules/react-native-feather'),
+    path.resolve(__dirname, 'node_modules/react-native-select-dropdown'),
     ...compileNodeModules,
   ],
   use: {
@@ -31,7 +33,8 @@ const babelLoaderConfiguration = {
 };
 
 const svgLoaderConfiguration = {
-  test: /\.svg$/,
+  test: /\.(svg)$/,
+  exclude: /node_modules/,
   use: [
     {
       loader: '@svgr/webpack',
@@ -40,7 +43,7 @@ const svgLoaderConfiguration = {
 };
 
 const imageLoaderConfiguration = {
-  test: /\.(gif|jpe?g|png)$/,
+  test: /\.(gif|jpe?g|png|svg)$/,
   use: {
     loader: 'url-loader',
     options: {
@@ -70,6 +73,7 @@ module.exports = {
     extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
     alias: {
       'react-native$': 'react-native-web',
+      'lottie-react-native': 'react-native-web-lottie',
     },
   },
   module: {

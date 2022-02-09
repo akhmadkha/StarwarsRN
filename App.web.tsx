@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {View} from 'react-native';
 import Home from './src/modules/film';
+import Routes from './src/routes/routes';
 
 // Initialize Apollo Client
 const client = new ApolloClient({
@@ -26,7 +27,7 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <View style={{flex: 1, backgroundColor: "#000"}}>
-        <Home/>
+        <Routes/>
       </View>
     </ApolloProvider>
   );

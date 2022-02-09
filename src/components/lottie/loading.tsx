@@ -4,7 +4,12 @@ import LottieView from 'lottie-react-native';
 export default function Loading() {
   return (
     <View style={style.wrapper}>
-      <LottieView source={require('../../assets/lottie/loading.json')} autoPlay loop style={style.lottie} />
+      <LottieView
+        source={require('../../assets/lottie/loading.json')}
+        autoPlay
+        loop
+        style={style.lottie}
+      />
     </View>
   );
 }
@@ -17,6 +22,6 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   lottie: {
-    width: 120
-  }
+    width: 120,
+  },
 });

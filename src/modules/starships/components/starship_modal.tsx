@@ -6,6 +6,8 @@ import {
   Modal,
   TouchableOpacity,
   ScrollView,
+  Platform,
+  ImageBackground,
 } from 'react-native';
 import {useQuery, gql} from '@apollo/client';
 import Image from '../../../components/global/Image';
@@ -121,7 +123,7 @@ export default function StarshipModal(props: Props) {
           </Text>
           <View style={style.container_pilot}>
             {pilotConnection.pilots.length < 1 ? (
-              <Notfound/>
+              <Notfound />
             ) : (
               pilotConnection?.pilots.map((val: any, idx: any) => {
                 return <CharacterCard key={idx} data={val} />;
@@ -142,13 +144,28 @@ export default function StarshipModal(props: Props) {
       onRequestClose={() => {
         props.onClose();
       }}>
-      <View style={style.modal_overlay}>
-        <View style={style.modal_presentation}>
+      <View
+        style={
+          Platform.OS === 'web' ? style.modal_overlay_web : style.modal_overlay
+        }>
+        <View
+          style={
+            Platform.OS === 'web'
+              ? style.modal_presentation_web
+              : style.modal_presentation
+          }>
           <View style={style.avatar_header_wrapper}>
-            <Image
-              source={require('../../../assets/images/ic-starship.png')}
-              style={style.avatar_header}
-            />
+            {Platform.OS === 'web' ? (
+              <ImageBackground
+                source={require('../../../assets/images/ic-starship.png')}
+                style={style.avatar_header_web}
+              />
+            ) : (
+              <Image
+                source={require('../../../assets/images/ic-starship.png')}
+                style={style.avatar_header}
+              />
+            )}
           </View>
           <ScrollView>
             <View style={{alignItems: 'center'}}>
@@ -194,12 +211,32 @@ const style = StyleSheet.create({
     borderColor: themeStyle.BG_SECONDARY_COLOR,
     borderRadius: 50,
   },
+  avatar_header_web: {
+    width: 100,
+    height: 100,
+    bottom: 30,
+  },
   modal_overlay: {
     height: '100%',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
+  modal_overlay_web: {
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   modal_presentation: {
-    height: '80%',
+    height: '60%',
+    marginTop: 'auto',
+    backgroundColor: themeStyle.BG_SECONDARY_COLOR,
+    paddingHorizontal: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  modal_presentation_web: {
+    height: '60%',
+    width: 400,
     marginTop: 'auto',
     backgroundColor: themeStyle.BG_SECONDARY_COLOR,
     paddingHorizontal: 20,

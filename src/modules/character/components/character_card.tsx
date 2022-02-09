@@ -1,10 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Platform, ImageBackground} from 'react-native';
 import Image from '../../../components/global/Image';
 import themeStyle from '../../../styles/theme.style';
 import CharacterModal from './character_modal';
@@ -30,16 +25,27 @@ export default function CharacterCard(props: Props) {
   const [modalVisible, setmodalVisible] = useState<boolean>(false);
   return (
     <>
-      <CharacterModal show={modalVisible} onClose={() => setmodalVisible(!modalVisible)} data={props.data}/>
+      <CharacterModal
+        show={modalVisible}
+        onClose={() => setmodalVisible(!modalVisible)}
+        data={props.data}
+      />
       <View style={style.item}>
         <TouchableOpacity
           onPress={() => setmodalVisible(!modalVisible)}
           style={style.card}>
           <View style={style.avatar_wrapper}>
-            <Image
-              source={require('../../../assets/images/avatar.png')}
-              style={style.avatar}
-            />
+            {Platform.OS === 'web' ? (
+              <ImageBackground
+                source={require('../../../assets/images/avatar.png')}
+                style={style.avatar_web}
+              />
+            ) : (
+              <Image
+                source={require('../../../assets/images/avatar.png')}
+                style={style.avatar}
+              />
+            )}
             <View>
               <View>
                 <Text style={style.side_text}>{gender}</Text>
@@ -94,6 +100,15 @@ const style = StyleSheet.create({
   avatar: {
     width: 40,
     height: 40,
+    marginRight: 10,
+  },
+  avatar_web: {
+    // width: "100%",
+    // height: "100%",
+    position: 'relative',
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
     marginRight: 10,
   },
 });

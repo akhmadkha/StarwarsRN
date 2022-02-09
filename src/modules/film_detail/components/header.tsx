@@ -58,7 +58,7 @@ const style = StyleSheet.create({
   },
   cover: {
     height: "70%",
-    // width: '100%',
+    width: '100%',
     resizeMode: 'contain',
   },
   greeting: {

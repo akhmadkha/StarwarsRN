@@ -6342,6 +6342,11 @@ lottie-react-native@^5.0.1:
     prop-types "^15.5.10"
     react-native-safe-modules "^1.0.3"
 
+lottie-web@^5.7.1:
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.8.1.tgz#807e0af0ad22b59bf867d964eb684cb3368da0ef"
+  integrity sha512-9gIizWADlaHC2GCt+D+yNpk5l2clZQFqnVWWIVdY0LnxC/uLa39dYltAe3fcmC/hrZ2IUQ8dLlY0O934Npjs7Q==
+
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
@@ -7642,6 +7647,13 @@ react-native-select-dropdown@^1.7.0:
   resolved "https://registry.yarnpkg.com/react-native-select-dropdown/-/react-native-select-dropdown-1.7.0.tgz#bb57bf9cf263053e71917c5e7c88ff6cbb702d1c"
   integrity sha512-zdHOHzrmWdNYLXuC+F1abbJhzUpBMgptWWOKN4gi3ge1gV3uPep/hpBznAUo7jHzObXQh6JHZP/AMmbg/1rWFA==
 
+react-native-svg-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg-loader/-/react-native-svg-loader-1.0.0.tgz#bde024157df58bc13434a4a1a3a0848bcbf2fa63"
+  integrity sha512-FcFuOtGie+rz5W7qO6stwD0fZfW9xomVCDIHrOxx7pT9/seXoq36VCDdHY8QsLC7FelhAbAq76aKfX6x/NR3Ww==
+  dependencies:
+    xmldom "^0.1.27"
+
 react-native-svg@^12.1.1:
   version "12.1.1"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.1.tgz#5f292410b8bcc07bbc52b2da7ceb22caf5bcaaee"
@@ -7658,6 +7670,13 @@ react-native-web-image-loader@^0.1.1:
     image-size "^0.5.1"
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
+
+react-native-web-lottie@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/react-native-web-lottie/-/react-native-web-lottie-1.4.4.tgz#b64d989cf3300bff5813f4ee3f2ee466092e6e4c"
+  integrity sha512-W0jZiOf2u3Us6yASdpgAuL1+3Gw1EU/Wi5QAf6brzhXmJnq6/FMGCTf5zvSaX0yIurr9qcYB40DwAb4HwA6frg==
+  dependencies:
+    lottie-web "^5.7.1"
 
 react-native-web@^0.17.5:
   version "0.17.5"
@@ -9532,6 +9551,11 @@ xmldoc@^1.1.2:
   integrity sha512-ruPC/fyPNck2BD1dpz0AZZyrEwMOrWTO5lDdIXS91rs3wtm4j+T8Rp2o+zoOYkkAxJTZRPOSnOGei1egoRmKMQ==
   dependencies:
     sax "^1.2.1"
+
+xmldom@^0.1.27:
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.31.tgz#b76c9a1bd9f0a9737e5a72dc37231cf38375e2ff"
+  integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==
 
 xtend@~4.0.1:
   version "4.0.2"
