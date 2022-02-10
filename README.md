@@ -2,7 +2,13 @@
 # Starwars Sayurbox Test
 
 ## iOS Screenshoot
-<img src="preview_app/ios/ios-1.png"/>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+ <img style="width: 150px" src="preview_app/ios/ios-1.png"/>
+ <img style="width: 150px" src="preview_app/ios/ios-2.png"/>
+ <img style="width: 150px" src="preview_app/ios/ios-3.png"/>
+ <img style="width: 150px" src="preview_app/ios/ios-4.png"/>
+ <img style="width: 150px" src="preview_app/ios/ios-5.png"/>
+</div>
 
 ### Tech Stack :
  - React Native
