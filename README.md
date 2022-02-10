@@ -17,6 +17,13 @@ Tested on Android, iOS, Web
  <img style="width: 150px" src="preview_app/ios/ios-5.png"/>
 </div>
 
+## Android Screenshoot
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+ <img style="width: 150px" src="preview_app/android/android-1.jpeg"/>
+ <img style="width: 150px" src="preview_app/android/android-2.jpeg"/>
+ <img style="width: 150px" src="preview_app/android/android-3.jpeg"/>
+</div>
+
 # Demo website : https://sayurbox.akhmadkha.id/
 
 ### Tech Stack :
