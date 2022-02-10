@@ -16,6 +16,8 @@
  <img style="width: 150px" src="preview_app/ios/ios-5.png"/>
 </div>
 
+# Demo website : https://sayurbox.akhmadkha.id/
+
 ### Tech Stack :
  - React Native
  - Typescript
@@ -26,8 +28,8 @@
 - yarn run web 
 
 ### Start on iOS :
- - npx react-native run ios
+ - See documentation: https://reactnative.dev/docs/running-on-device
 
 ### Start on Android :
- - npx react-native run android
+ - See documentation: https://reactnative.dev/docs/running-on-device
 
