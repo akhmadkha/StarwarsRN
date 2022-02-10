@@ -14,11 +14,13 @@ import {
   StatusBar,
   useColorScheme,
 } from 'react-native';
-import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import fetch from 'cross-fetch';
+import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink} from '@apollo/client';
 import Routes from './src/routes/routes';
 // Initialize Apollo Client
 const client = new ApolloClient({
-  uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+  link: new HttpLink({ uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index', fetch }),
+  // uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
 
   cache: new InMemoryCache(),
   headers: {

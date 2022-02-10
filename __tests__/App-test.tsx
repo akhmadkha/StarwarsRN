@@ -1,7 +1,8 @@
 /**
  * @format
  */
-
+ jest.useFakeTimers()
+ jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 import 'react-native';
 import React from 'react';
 import App from '../App';

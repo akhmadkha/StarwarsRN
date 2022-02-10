@@ -4,16 +4,15 @@ import BackButton from '../../../components/global/back_button';
 import theme from '../../../styles/theme.style';
 
 const images: any = {
-  '1': require('../../../assets/images/posters/episode1.jpeg'),
-  '2': require('../../../assets/images/posters/episode2.jpeg'),
-  '3': require('../../../assets/images/posters/episode3.jpeg'),
-  '4': require('../../../assets/images/posters/episode4.jpeg'),
-  '5': require('../../../assets/images/posters/episode5.jpeg'),
-  '6': require('../../../assets/images/posters/episode6.jpeg'),
+  1: require('../../../assets/images/posters/episode1.jpeg'),
+  2: require('../../../assets/images/posters/episode2.jpeg'),
+  3: require('../../../assets/images/posters/episode3.jpeg'),
+  4: require('../../../assets/images/posters/episode4.jpeg'),
+  5: require('../../../assets/images/posters/episode5.jpeg'),
+  6: require('../../../assets/images/posters/episode6.jpeg'),
 };
 export default function Header(props: any) {
   
-  console.log(images[props.episodeID], "yuhu")
   return (
     <ImageBackground
       source={require('../../../assets/images/header-bg.png')}
@@ -21,11 +20,11 @@ export default function Header(props: any) {
       <View style={style.header_wrapper}>
         <BackButton title="Movie Detail" />
       </View>
-      {/* <View style={style.cover_wrapper}>
+      <View style={style.cover_wrapper}>
         <Image source={images[props.episodeID]} style={style.cover} />
-      </View> */}
+      </View>
       {
-        props.episodeID && <Image source={images[props.episodeID]} style={style.cover} /> 
+        props.episodeID && <Image source={images[props.episodeID ?? 1]} style={style.cover} /> 
       }
     </ImageBackground>
   );

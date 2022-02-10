@@ -8,9 +8,9 @@ import {
   ScrollView,
   Platform,
   ImageBackground,
+  Image
 } from 'react-native';
 import {useQuery, gql} from '@apollo/client';
-import Image from '../../../components/global/Image';
 import themeStyle from '../../../styles/theme.style';
 import Error from '../../../components/lottie/error';
 import Loading from '../../../components/lottie/loading';

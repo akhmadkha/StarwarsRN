@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink} from '@apollo/client';
 import {View} from 'react-native';
 import Home from './src/modules/film';
 import Routes from './src/routes/routes';
+import fetch from 'cross-fetch';
 
 // Initialize Apollo Client
 const client = new ApolloClient({
-  uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+  link: new HttpLink({ uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index', fetch }),
+  // uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
 
   cache: new InMemoryCache(),
   headers: {

@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   Text,
+  Platform,
 } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import themeStyle from '../../styles/theme.style';
@@ -23,7 +24,7 @@ export default function DropdownButton(props: Props) {
       data={data ?? []}
       buttonStyle={style.button_dropdown}
       buttonTextStyle={style.button_text_dropdown}
-      rowTextStyle={style.button_row_text}
+      rowTextStyle={Platform.OS === "web" ? style.button_row_text_web : style.button_row_text}
       dropdownStyle={style.button_row}
       onSelect={(selectedItem, index) => {
         props.onSelect({selectedItem, index});
@@ -57,5 +58,10 @@ const style = StyleSheet.create({
   button_row_text: {
     fontSize: 12,
     fontWeight: '700',
+  },
+  button_row_text_web: {
+    fontSize: 12,
+    fontWeight: '700',
+    marginVertical: 12,
   },
 });

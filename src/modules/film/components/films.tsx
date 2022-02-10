@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import Image from '../../../components/global/Image';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import themeStyle from '../../../styles/theme.style';
 import {useQuery, gql} from '@apollo/client';
 import Error from '../../../components/lottie/error';
@@ -34,12 +33,12 @@ type mainScreenProp = StackNavigationProp<
 function Films() {
   const navigation = useNavigation<mainScreenProp>();
   const images: any = {
-    '1': require('../../../assets/images/posters/episode1.jpeg'),
-    '2': require('../../../assets/images/posters/episode2.jpeg'),
-    '3': require('../../../assets/images/posters/episode3.jpeg'),
-    '4': require('../../../assets/images/posters/episode4.jpeg'),
-    '5': require('../../../assets/images/posters/episode5.jpeg'),
-    '6': require('../../../assets/images/posters/episode6.jpeg'),
+    1: require('../../../assets/images/posters/episode1.jpeg'),
+    2: require('../../../assets/images/posters/episode2.jpeg'),
+    3: require('../../../assets/images/posters/episode3.jpeg'),
+    4: require('../../../assets/images/posters/episode4.jpeg'),
+    5: require('../../../assets/images/posters/episode5.jpeg'),
+    6: require('../../../assets/images/posters/episode6.jpeg'),
   };
   const {error, data, refetch} = useQuery(GET_FILM);
   if (error) {
@@ -61,7 +60,7 @@ function Films() {
             key={idx}
             style={style.card}>
             <View style={style.image_wrapper}>
-              <Image style={style.film_img} source={images[val?.episodeID]} />
+              <Image style={style.film_img} source={images[val?.episodeID ?? 1]} />
             </View>
             <View style={style.desc_wrapper}>
               <View style={style.desc_top}>

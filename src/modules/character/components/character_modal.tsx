@@ -8,8 +8,8 @@ import {
   ScrollView,
   Platform,
   ImageBackground,
+  Image
 } from 'react-native';
-import Image from '../../../components/global/Image';
 import themeStyle from '../../../styles/theme.style';
 
 type Props = {

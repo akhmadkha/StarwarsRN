@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, TouchableOpacity, Platform, ImageBackground} from 'react-native';
-import Image from '../../../components/global/Image';
+import {View, StyleSheet, Text, TouchableOpacity, Platform, ImageBackground, Image} from 'react-native';
 import themeStyle from '../../../styles/theme.style';
 import CharacterModal from './character_modal';
 

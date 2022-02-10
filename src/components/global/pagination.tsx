@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import groupArrayItem from '../../utils/group_array_item';
 
 type Props = {
   data: object[];
@@ -14,14 +15,8 @@ type Props = {
 
 export default function Pagination(props: Props) {
   const [active, setactive] = useState<number>(0);
-  let {data} = props;
-  const groups: any = data
-    .map((e, i) => {
-      return i % props.perPage === 0 ? data.slice(i, i + props.perPage) : null;
-    })
-    .filter(e => {
-      return e;
-    });
+  let {data, perPage} = props;
+  const groups: any = groupArrayItem({data, perPage})
 
   let indicator = new Array(groups.length).fill(0);
   let indicator2 = Array.from(Array(groups.length).keys());
