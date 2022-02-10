@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
 import theme from '../../../styles/theme.style';
 import {useQuery, gql} from '@apollo/client';
-import timeGreeting from '../../../utils/timeGreeting';
+import timeGreeting from '../../../utils/time_greeting';
 
 const GET_PEOPLE_NAME = gql`
   query Root {
