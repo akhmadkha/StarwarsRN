@@ -60,7 +60,7 @@ function Films() {
             key={idx}
             style={style.card}>
             <View style={style.image_wrapper}>
-              <Image style={style.film_img} source={images[val?.episodeID ?? 1]} />
+              <Image style={style.film_img} source={images[val?.episodeID  ?? 1] ?? require('../../../assets/images/posters/no-image.png')} />
             </View>
             <View style={style.desc_wrapper}>
               <View style={style.desc_top}>

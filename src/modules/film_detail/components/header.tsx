@@ -22,11 +22,11 @@ export default function Header(props: any) {
       </View>
       <View style={style.cover_wrapper}>
         {
-          Platform.OS === "web" && <Image source={images[props.episodeID]} style={Platform.OS === "web" ? style.cover_web : style.cover} />
+          Platform.OS === "web" && <Image source={images[props.episodeID] ?? require('../../../assets/images/posters/no-image.png')} style={Platform.OS === "web" ? style.cover_web : style.cover} />
         }
       </View>
       {
-        props.episodeID && <Image source={images[props.episodeID]} style={Platform.OS === "web" ? style.cover_web : style.cover} /> 
+        props.episodeID && <Image source={images[props.episodeID] ?? require('../../../assets/images/posters/no-image.png')} style={Platform.OS === "web" ? style.cover_web : style.cover} /> 
       }
     </ImageBackground>
   );
