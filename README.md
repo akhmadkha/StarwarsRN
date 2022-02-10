@@ -2,6 +2,7 @@
 # Starwars Sayurbox Test
 
 ## iOS Screenshoot
+<img src="preview_app/ios/ios-1.png"/>
 
 ### Tech Stack :
  - React Native
