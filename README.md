@@ -1,6 +1,12 @@
 
 # Starwars Sayurbox Test
 
+## Web Screenshoot
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+ <img style="width: 150px" src="preview_app/web/web-1.png"/>
+ <img style="width: 150px" src="preview_app/web/web-2.png"/>
+</div>
+
 ## iOS Screenshoot
 <div style="display: flex; flex-direction: row; justify-content: space-between">
  <img style="width: 150px" src="preview_app/ios/ios-1.png"/>
