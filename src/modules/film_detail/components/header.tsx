@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground, Platform} from 'react-native';
 import BackButton from '../../../components/global/back_button';
 import theme from '../../../styles/theme.style';
 
@@ -21,10 +21,12 @@ export default function Header(props: any) {
         <BackButton title="Movie Detail" />
       </View>
       <View style={style.cover_wrapper}>
-        <Image source={images[props.episodeID]} style={style.cover} />
+        {
+          Platform.OS === "web" && <Image source={images[props.episodeID]} style={Platform.OS === "web" ? style.cover_web : style.cover} />
+        }
       </View>
       {
-        props.episodeID && <Image source={images[props.episodeID ?? 1]} style={style.cover} /> 
+        props.episodeID && <Image source={images[props.episodeID]} style={Platform.OS === "web" ? style.cover_web : style.cover} /> 
       }
     </ImageBackground>
   );
@@ -52,10 +54,15 @@ const style = StyleSheet.create({
   },
   cover_wrapper: {
     borderRadius: 20,
-    // width: '60%',
+    width: '60%',
     // overflow: 'hidden',
   },
   cover: {
+    height: "70%",
+    // width: '100%',
+    resizeMode: 'contain',
+  },
+  cover_web: {
     height: "70%",
     width: '100%',
     resizeMode: 'contain',
