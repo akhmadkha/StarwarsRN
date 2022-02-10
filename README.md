@@ -1,5 +1,6 @@
 
 # Starwars Sayurbox Test
+Tested on Android, iOS, Web
 
 ## Web Screenshoot
 <div style="display: flex; flex-direction: row; justify-content: space-between">
