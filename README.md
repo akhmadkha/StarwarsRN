@@ -24,8 +24,6 @@ Tested on Android, iOS, Web
  <img style="width: 150px" src="preview_app/android/android-3.jpeg"/>
 </div>
 
-# Demo website : https://sayurbox.akhmadkha.id/
-
 ### Tech Stack :
  - React Native
  - Typescript
